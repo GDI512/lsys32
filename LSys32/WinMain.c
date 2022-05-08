@@ -39,14 +39,15 @@ INT_PTR OnCommand(HWND hDlg, WPARAM wParam) {
         iSys = ComboBox_GetCurSel(hCtl);
         SendMessage(hBox, GBM_SETSYSID, iSys, 0);
         SendMessage(hBox, GBM_DRAW, 0, 0);
-        return TRUE;
+        break;
     case IDC_ANIMATE:
         hCtl = GetDlgItem(hDlg, IDC_COMBO);
         iSys = ComboBox_GetCurSel(hCtl);
         SendMessage(hBox, GBM_SETSYSID, iSys, 0);
         SendMessage(hBox, GBM_ANIMATE, 0, 0);
-        return TRUE;
+        break;
     }
+    return TRUE;
 }
 
 INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam) {
